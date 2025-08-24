@@ -3,7 +3,7 @@ name: httprequest
 on:
   workflow_dispatch:   # 手动触发
   schedule:
-    - cron: '*/5 * * * *'  # UTC 时间每天 01:00 运行（抓取昨天日志）
+    - cron: '*/1 * * * *'  # UTC 时间每天 01:00 运行（抓取昨天日志）
 
 jobs:
   fetch_logs:           # job 名称
@@ -26,5 +26,6 @@ jobs:
       - name: Run httprequest.py
         run: |
           python scripts/httprequest.py
+
 
 
